@@ -32,16 +32,16 @@ func Combine(
 ) error {
 
 	if error1 == nil {
+
 		if error2 == nil {
 			return nil
-		} else {
-			return error2
 		}
-	} else {
-		if error2 == nil {
-			return error1
-		} else {
-			return errors.New(error1.Error() + ErrorsSeparator + error2.Error())
-		}
+		return error2
+
 	}
+
+	if error2 == nil {
+		return error1
+	}
+	return errors.New(error1.Error() + ErrorsSeparator + error2.Error())
 }

@@ -34,7 +34,7 @@ func Test_Combine(t *testing.T) {
 	var errCombined error
 	var errCombinedExpected error
 
-	aTest = tester.NewTest(t)
+	aTest = tester.New(t)
 
 	// Test #1. ++
 	err1 = errors.New("1")
